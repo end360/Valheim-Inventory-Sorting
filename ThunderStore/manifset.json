@@ -1,0 +1,9 @@
+{
+	"name": "Inventory Sorting",
+	"version_number": "1.0.0",
+	"website_url": "",
+	"description": "Adds inventory sorting buttons to containers and player inventory.",
+	"dependencies": [
+		"denikson-BepInExPack_Valheim-5.4.601"
+	]
+}
