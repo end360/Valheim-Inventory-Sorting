@@ -10,7 +10,7 @@ using HarmonyLib;
 
 namespace InventorySort
 {
-    [BepInPlugin("cf.end360.valheim.inventorysort", "Inventory Sort", "1.0.0")]
+    [BepInPlugin("cf.end360.valheim.inventorysort", "Inventory Sort", "1.0.1")]
     [BepInProcess("valheim.exe")]
     public class Plugin : BaseUnityPlugin
     {
