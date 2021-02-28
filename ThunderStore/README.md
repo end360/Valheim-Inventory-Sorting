@@ -1,5 +1,5 @@
 # Valheim Inventory Sorting
-This BepInEx plugin adds inventory sorting buttons to Valheim. The player inventory is sorted excluding the hotbar, containers are sorted entirely.
+This BepInEx plugin adds inventory sorting buttons to Valheim. The player inventory is sorted excluding the hotbar, containers are sorted entirely. There is an auto-stacking feature (doesn't auto-stack hotbar) which can be disabled in the configuration file for the plugin.
 
 ## Manual Installation
 This is the recommended installation method.
