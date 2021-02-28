@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using HarmonyLib;
+using BepInEx.Configuration;
 
 namespace InventorySort
 {
@@ -52,6 +53,8 @@ namespace InventorySort
             }
         }
         Harmony harmony;
+
+        internal ConfigEntry<bool> ShouldAutoStack;
         
         void Awake()
         {
@@ -62,6 +65,8 @@ namespace InventorySort
             {
                 InventoryGuiPatch.Postfix();
             }
+
+            ShouldAutoStack = Config.Bind("General", "ShouldAutoStack", true, "Whether items should automatically be stacked together when sorting the inventory.");
         }
 
         void OnDestroy()
