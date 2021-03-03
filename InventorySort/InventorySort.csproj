@@ -35,6 +35,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>F:\Steam\steamapps\common\Valheim\BepInEx\core\0Harmony.dll</HintPath>
     </Reference>
+    <Reference Include="assembly_guiutils, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\Steam\steamapps\common\Valheim\valheim_Data\Managed\assembly_guiutils.dll</HintPath>
+    </Reference>
     <Reference Include="assembly_utils">
       <HintPath>F:\Steam\steamapps\common\Valheim\valheim_Data\Managed\assembly_utils.dll</HintPath>
     </Reference>
