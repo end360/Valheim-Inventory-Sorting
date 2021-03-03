@@ -55,7 +55,9 @@ namespace InventorySort
         Harmony harmony;
 
         internal ConfigEntry<bool> ShouldAutoStack;
-        
+        internal ConfigEntry<string> GamepadJoystickSortKey;
+        internal ConfigEntry<UnityEngine.KeyCode> SortKeyCode;
+
         void Awake()
         {
             instance = this;
@@ -67,6 +69,8 @@ namespace InventorySort
             }
 
             ShouldAutoStack = Config.Bind("General", "ShouldAutoStack", true, "Whether items should automatically be stacked together when sorting the inventory.");
+            GamepadJoystickSortKey = Config.Bind("Controls", "GamepadJoystickSortKey", "JoyAttack", "What joystick input is used to sort the inventory. One of https://github.com/Valheim-Modding/Wiki/wiki/Key-Binding-Strings");
+            SortKeyCode = Config.Bind("Controls", "SortKeyCode", KeyCode.R, "Which key sorts the inventory in the GUI. This is a UnityEngine.KeyCode.");
         }
 
         void OnDestroy()
@@ -103,6 +107,13 @@ namespace InventorySort
             btn.onClick.RemoveAllListeners();
             btn.interactable = true;
             obj.SetActive(false);
+
+            var input = obj.GetComponent<UIGamePad>();
+            input.m_keyCode = SortKeyCode.Value;
+            input.m_zinputKey = GamepadJoystickSortKey.Value;
+            // TODO: Find a way to get text for the hint.
+            input.m_hint.SetActive(false);
+            input.m_hint = null;
             return obj;
         }
 
