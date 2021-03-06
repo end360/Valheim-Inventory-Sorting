@@ -119,6 +119,8 @@ namespace InventorySort
 
             // Clear the cache in case anyone is using something that loads plugins at run-time.
             cache.Clear();
+
+            typeof(Inventory).GetMethod("Changed").Invoke(inventory, new object[0]);
         }
     }
 
